@@ -3,7 +3,7 @@ let res = [];
 function letterCombinations(input_digit) {
   let arr = [0, 1, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
   helper(arr, input_digit, res, 0, '');
-  return res.sort();
+  return res.sort((a, b) => a.length - b.length || a.localeCompare(b));
 }
 
 function helper(arr, input_digit, res, index, str) {
